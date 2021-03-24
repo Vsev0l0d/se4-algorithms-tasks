@@ -2,7 +2,7 @@
 #include <list>
 using namespace std;
 
-bool compare(const string& x1, const string& x2){return (x1 + x2 > x2 + x1);}
+bool compare(const string& x1, const string& x2){return x1 + x2 > x2 + x1;}
 
 int main() {
     list<string> data;
