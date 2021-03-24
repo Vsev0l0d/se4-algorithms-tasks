@@ -19,11 +19,9 @@ int main() {
     }
     stable_sort(inv, inv + s.size(), compare);
 
-    char result[s.size()];
     for (int i = 0; i < s.size(); i++) {
         n = inv[n].first;
-        result[i] = s[n];
+        cout << s[n];
     }
-    for (char x : result) cout << x;
     return 0;
 }
