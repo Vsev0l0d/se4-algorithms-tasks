@@ -43,8 +43,7 @@ int main() {
             if (index_x == -1) continue;
 
             auto it_r = blocks.lower_bound(index_x);
-            auto it_l = blocks.end();
-            if (it_r != blocks.begin()) it_l = prev(it_r);
+            auto it_l = (it_r != blocks.begin()) ? prev(it_r) : blocks.end();
 
             if (it_r != blocks.end() && it_r->first == index_x + size_x){
                 if (it_l != blocks.end() && it_l->first + it_l->second == index_x) {
