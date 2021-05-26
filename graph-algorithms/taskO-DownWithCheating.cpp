@@ -2,11 +2,11 @@
 #include <list>
 using namespace std;
 
-bool bfs(short v, list<short>* graph, short* colors, short color){
+bool dfs(short v, list<short>* graph, short* colors, short color){
     colors[v] = color;
     for(short next : graph[v]){
         if (colors[next] == 0){
-            if (!bfs(next, graph, colors, (color == 2) ? 1 : 2)) return false;
+            if (!dfs(next, graph, colors, (color == 2) ? 1 : 2)) return false;
         } else if (colors[next] == color) return false;
     }
     return true;
@@ -29,7 +29,7 @@ int main() {
     bool result = true;
     for (short i = 0; i < N; i++){
         if (!result) break;
-        if(colors[i] == 0) result = bfs(i, graph, colors, 1);
+        if(colors[i] == 0) result = dfs(i, graph, colors, 1);
     }
 
     if (result) cout << "YES";
