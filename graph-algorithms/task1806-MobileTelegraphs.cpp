@@ -54,14 +54,16 @@ int main() {
             for (int d = 0; d < 10; d++){
                 new_x = x - r * pw + d * pw;
                 auto it = numbers.find(new_x);
-                if (it != numbers.end()) vertices.insert({times[matchPrefix(x, new_x)], it->second});
+                if (it != numbers.end())
+                    vertices.insert({times[matchPrefix(x, new_x)], it->second});
             }
             for (int d = j + 1; d < WIDTH; d++){
                 pw2 = (int64_t) pow(10, d);
                 int r2 = x / pw2 % 10;
                 new_x = x - r * pw + r2 * pw - r2 * pw2 + r * pw2;
                 auto it = numbers.find(new_x);
-                if (it != numbers.end()) vertices.insert({times[matchPrefix(x, new_x)], it->second});
+                if (it != numbers.end())
+                    vertices.insert({times[matchPrefix(x, new_x)], it->second});
             }
         }
 
