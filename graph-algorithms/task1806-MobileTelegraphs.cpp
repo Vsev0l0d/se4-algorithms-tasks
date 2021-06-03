@@ -54,7 +54,7 @@ int main() {
             for (int d = 0; d < 10; d++){
                 new_x = x - r * pw + d * pw;
                 auto it = numbers.find(new_x);
-                if (it != numbers.end())
+                if (it != numbers.end() && x != new_x)
                     vertices.insert({times[matchPrefix(x, new_x)], it->second});
             }
             for (int d = j + 1; d < WIDTH; d++){
@@ -62,7 +62,7 @@ int main() {
                 int r2 = x / pw2 % 10;
                 new_x = x - r * pw + r2 * pw - r2 * pw2 + r * pw2;
                 auto it = numbers.find(new_x);
-                if (it != numbers.end())
+                if (it != numbers.end() && x != new_x)
                     vertices.insert({times[matchPrefix(x, new_x)], it->second});
             }
         }
